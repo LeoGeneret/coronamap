@@ -1,0 +1,83 @@
+#Sidebar {
+  // position: fixed;
+  height: 100vh;
+
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.05);
+  font-family: "Anonymous Pro", monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+
+  .mainTab {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 25px;
+    height: 100%;
+    width: 316px;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    z-index: 999;
+
+
+
+    .totalCasesSection {
+      margin-bottom: 20px;
+      .cases {
+        color: red;
+        font-weight: bold;
+        font-size: 2.2em;
+      }
+    }
+
+    .countriesSection {
+      max-height: 100%;
+      overflow: scroll;
+      border-top: 1px dotted black;
+      border-bottom: 1px dotted black;
+      padding-bottom: 10px;
+      cursor: pointer;
+
+      .country {
+        margin-top: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 5px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        &:hover {
+          border: 1px solid rgba(0, 0, 0, 1);
+        }
+      }
+    }
+  }
+
+  .sideTab {
+    height: 100%;
+    background-color: #F5F5F5;
+    width: 316px;
+    box-sizing: border-box;
+    padding: 50px 25px;
+    transform: translateX(-100%);
+    z-index: 9;
+    visibility: hidden;
+    transition: all .35s;
+
+    &.open {
+      visibility: visible;
+      transform: translateX(0);
+
+    }
+  }
+}
