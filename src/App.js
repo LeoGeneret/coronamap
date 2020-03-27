@@ -11,8 +11,6 @@ function App() {
   const [dataFetched, setDataFetched] = useState(false);
   const [mapSVG, setMapSVG] = useState("");
 
-  const lol = "<H1>HELLO</H1>";
-
   const dataFetch = () => {
     const globalDatasAPI = axios
       .get("https://corona.lmao.ninja/all")
@@ -37,34 +35,44 @@ function App() {
       .then(() => setDataFetched(true));
   };
 
-  
-
   useEffect(() => {
     dataFetch();
   }, []);
 
+
   return (
     <div className="App">
-      <div className={`loader ${dataFetched ? 'ready' : null}`}>
-        <p>Data's fetching</p>
+      <div className={`loader ${dataFetched ? "ready" : null}`}>
+        <div className="loadingio-spinner-wedges-1d6kj5xtu6">
+          <div className="ldio-r1btqnfa2xs">
+            <div>
+              <div>
+                <div></div>
+              </div>
+              <div>
+                <div></div>
+              </div>
+              <div>
+                <div></div>
+              </div>
+              <div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       {dataFetched && (
         <GlobalContext.Provider
           value={{
             value: [globalDatas, setGlobalDatas],
-            value2: [countriesDatas, setCountriesDatas]
+            value2: [countriesDatas, setCountriesDatas],
+            value3: [mapSVG, setMapSVG]
           }}
         >
           <Sidebar />
-          {/* <Map /> */}
-          {/* <div class="mapSection">
-            {mapSVG !== "" && (
-              <div
-                className="mapContainer"
-                dangerouslySetInnerHTML={{ __html: mapSVG }}
-              ></div>
-            )}
-          </div> */}
+          {mapSVG !== "" && <Map />}
+
         </GlobalContext.Provider>
       )}
     </div>

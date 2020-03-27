@@ -1,35 +1,88 @@
 .App {
   display: flex;
-  background-color: #202025;
+  background-color: #242530;
 }
 
 .loader {
-height: 100vh;
-width: 100vw;
-color: white;
-font-size: 2em;
-text-align: center;
-&.ready {
-  display: none;
-}
-}
-
-.mapSection {
-  width: 100%;
   height: 100vh;
-  // background-image: url(../shared/map.svg);
-  background-repeat: no-repeat;
-  position: relative;
+  width: 100vw;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  &.ready {
+    display: none;
+  }
+}
 
-  svg {
-    position: absolute;
-    left: 0;
-    max-width: 100%;
-    height:100%;
+// LOADER
+@keyframes ldio-r1btqnfa2xs {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  image {
-    width: 150px;
-    height: 150px;
+  100% {
+    transform: rotate(360deg);
   }
+}
+.ldio-r1btqnfa2xs > div > div {
+  transform-origin: 50px 50px;
+  animation: ldio-r1btqnfa2xs 3.0303030303030303s linear infinite;
+  opacity: 0.8;
+}
+.ldio-r1btqnfa2xs > div > div > div {
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 28px;
+  height: 28px;
+  border-radius: 28px 0 0 0;
+  transform-origin: 50px 50px;
+}
+.ldio-r1btqnfa2xs > div div:nth-child(1) {
+  animation-duration: 0.7575757575757576s;
+}
+.ldio-r1btqnfa2xs > div div:nth-child(1) > div {
+  background: #e50914;
+  transform: rotate(0deg);
+}
+.ldio-r1btqnfa2xs > div div:nth-child(2) {
+  animation-duration: 1.0101010101010102s;
+}
+.ldio-r1btqnfa2xs > div div:nth-child(2) > div {
+  background: #221f1f;
+  transform: rotate(0deg);
+}
+.ldio-r1btqnfa2xs > div div:nth-child(3) {
+  animation-duration: 1.5151515151515151s;
+}
+.ldio-r1btqnfa2xs > div div:nth-child(3) > div {
+  background: #f5f5f1;
+  transform: rotate(0deg);
+}
+.ldio-r1btqnfa2xs > div div:nth-child(4) {
+  animation-duration: 3.0303030303030303s;
+}
+.ldio-r1btqnfa2xs > div div:nth-child(4) > div {
+  background: #e50914;
+  transform: rotate(0deg);
+}
+.loadingio-spinner-wedges-1d6kj5xtu6 {
+  width: 94px;
+  height: 94px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  // background: #f1f2f3;
+}
+.ldio-r1btqnfa2xs {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(0.94);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-r1btqnfa2xs div {
+  box-sizing: content-box;
 }
