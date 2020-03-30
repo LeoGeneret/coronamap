@@ -24,7 +24,7 @@ function App() {
       });
     const mapAPI = axios
       .get(
-        "https://upload.wikimedia.org/wikipedia/commons/archive/3/3b/20200320123012%21COVID-19_Outbreak_World_Map_per_Capita.svg"
+        "https://upload.wikimedia.org/wikipedia/commons/2/26/COVID-19_Outbreak_World_Map.svg"
       )
       .then(response => {
         setMapSVG(response.data);

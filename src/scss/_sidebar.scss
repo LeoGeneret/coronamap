@@ -1,6 +1,7 @@
 #Sidebar {
   // position: fixed;
   height: 100vh;
+  width: auto;
 
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   font-family: "Anonymous Pro", monospace;
@@ -15,7 +16,6 @@
     padding-bottom: 20px;
   }
 
-
   .mainTab {
     display: flex;
     background-color: white;
@@ -29,17 +29,6 @@
     z-index: 999;
     box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.05);
 
-
-
-    .totalCasesSection {
-      margin-bottom: 20px;
-      .cases {
-        color:#e22929;
-        font-weight: bold;
-        font-size: 2.2em;
-      }
-    }
-
     .countriesSection {
       max-height: 100%;
       overflow: scroll;
@@ -51,46 +40,173 @@
       .country {
         margin-top: 10px;
         border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
         border-radius: 5px;
         padding: 10px;
         display: flex;
         justify-content: space-between;
 
         &:hover {
-          border: 1px solid rgba(0, 0, 0, 1);
+          border: 1px solid rgba(0, 0, 0, 0.25);
         }
       }
     }
   }
 
+  .totalCasesSection {
+    margin-bottom: 20px;
+    .cases {
+      color: #e22929;
+      font-weight: bold;
+      font-size: 2.2em;
+    }
+  }
+
   .sideTab {
     height: 100%;
-    background-color: #F5F5F5;
-    width: 0px;
+    background-color: #f5f5f5;
+    width: 316px;
     z-index: 9;
     visibility: hidden;
-    transition: all .35s;
+    display: none;
+
+    h1 {
+      padding-bottom: 0;
+    }
+
+    &.closed {
+      transform: translateX(calc(-100% - 20px));
+    }
+
+    .totalCasesSection {
+      margin-bottom: 40px;
+    }
+
+    .closeTab {
+      position: absolute;
+      display: block;
+      top: 20px;
+      left: 100%;
+      padding: 14px 9px 14px 6px;
+      background-color: #f5f5f5;
+      border-radius: 0 6px 6px 0;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.05);
+      border-left: none;
+      cursor: pointer;
+
+      svg.closed {
+        transform: rotate(180deg);
+      }
+    }
+
+    .casesCountry {
+      color: #e22929;
+      font-weight: bold;
+      font-size: 1.8em;
+    }
 
     &.open {
       visibility: visible;
       transform: translateX(0);
-      width: 316px;
       box-sizing: border-box;
       padding: 50px 25px;
+      display: block;
+    }
 
+    .sectionTitle {
+      border-bottom: 1px dotted black;
+      margin-bottom: 10px;
+      padding-bottom: 2px;
+      font-weight: bold;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background-color: white;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+      padding: 10px;
+      border-radius: 5px;
+
+      .legend {
+        display: grid;
+        padding-top: 16px;
+        grid-template-columns: 8px auto min-content;
+        align-items: center;
+        grid-gap: 16px 8px;
+        font-size: 13px;
+        line-height: 20px;
+
+        &.green {
+          .color {
+            background-color: #5cbb5c;
+          }
+        }
+        &.red {
+          .color {
+            background-color: #e22929;
+          }
+        }
+        &.orange {
+          padding-top: 0;
+          .color {
+            background-color: orange;
+          }
+        }
+      }
+
+      .color {
+        height: 8px;
+        width: 8px;
+        border-radius: 8px;
+
+        .orange {
+        }
+      }
     }
 
     // NEWS SECTION
     .news {
       .newsCard {
+        text-decoration: none;
+        // font-family: "Lora", serif;
         border: 1px solid rgba(0, 0, 0, 0.05);
         display: flex;
         border-radius: 5px;
+        background-color: white;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
         padding: 10px;
+        align-items: center;
+        max-height: 100px;
+        margin-bottom: 10px;
+
+        &:hover {
+          border: 1px solid rgba(0, 0, 0, 0.25);
+        }
 
         .imgContainer {
-          width: 20%;
-          height: auto;
+          width: 80px;
+          height: 80px;
+          border-radius: 6px;
+          min-width: 80px;
+          background-size: cover;
+          margin-right: 15px;
+        }
+
+        .infoContainer {
+          p {
+            max-lines: 3;
+            height: 54px;
+            line-height: 18px;
+            color: #333333;
+            font-size: 12px;
+            overflow: hidden;
+            font-weight: bold;
+            text-overflow: ellipsis;
+          }
         }
       }
     }

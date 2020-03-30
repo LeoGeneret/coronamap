@@ -12,8 +12,8 @@ function Map() {
     var svgTag = document.querySelector('.mapContainer svg')
     svgTag.setAttribute('viewBox', '-40 -20 1032 523');
     var gTagSize = document.querySelector('.currentLayer').getBoundingClientRect();
-    svgTag.style.height = gTagSize.height;
-    svgTag.style.width = gTagSize.width;
+    // svgTag.style.height = gTagSize.height;
+    // svgTag.style.width = gTagSize.width;
   }
   useEffect(() => {
     styleAdjust()
