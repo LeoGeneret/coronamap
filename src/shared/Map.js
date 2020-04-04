@@ -14,10 +14,15 @@ function Map() {
   const styleAdjust = () => {
     const svgTag = document.querySelector('.svgContainer svg');
     const titleTag = document.querySelector('title');
+
+    // const oldSVGContent = svgTag.innerHTML;
+    // const newSVGContent = "<g className='currentLayer'>" + oldSVGContent + "</g>"
+    // svgTag.innerHTML = newSVGContent
+
     const currentLayer = document.querySelector('.currentLayer');
-    currentLayer.removeAttribute('transform');
+    // currentLayer.removeAttribute('transform');
     titleTag.remove();
-    svgTag.setAttribute('viewBox', '-40 -20 1032 523');
+    svgTag.setAttribute('viewBox', '-140 486 3230 523');
 
     const svgPath = document.querySelectorAll('.svgContainer path');
     for (let i = 0; i < svgPath.length; i += 1) {
